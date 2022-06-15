@@ -1,8 +1,8 @@
-import "./set-public-path";
-import { h, createApp } from "vue";
-import singleSpaVue from "single-spa-vue";
-// import router from "./router";
-import App from "./App.vue";
+import "./set-public-path"
+import { h, createApp } from "vue"
+import singleSpaVue from "single-spa-vue"
+import router from "./router"
+import App from "./App.vue"
 
 const vueLifecycles = singleSpaVue({
   createApp,
@@ -12,14 +12,14 @@ const vueLifecycles = singleSpaVue({
         name: this.name,
         mountParcel: this.mountParcel,
         singleSpa: this.singleSpa,
-      });
+      })
     },
   },
-  //   handleInstance: (app) => {
-  //     app.use(router);
-  //   },
-});
+  handleInstance: (app) => {
+    app.use(router)
+  },
+})
 
-export const bootstrap = vueLifecycles.bootstrap;
-export const mount = vueLifecycles.mount;
-export const unmount = vueLifecycles.unmount;
+export const bootstrap = vueLifecycles.bootstrap
+export const mount = vueLifecycles.mount
+export const unmount = vueLifecycles.unmount
