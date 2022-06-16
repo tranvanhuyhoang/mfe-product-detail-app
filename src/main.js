@@ -7,12 +7,9 @@ import App from "./App.vue"
 const vueLifecycles = singleSpaVue({
   createApp,
   appOptions: {
+    el: "#product-detail",
     render() {
-      return h(App, {
-        name: this.name,
-        mountParcel: this.mountParcel,
-        singleSpa: this.singleSpa,
-      })
+      return h(App)
     },
   },
   handleInstance: (app) => {

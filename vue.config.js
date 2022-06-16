@@ -6,8 +6,9 @@ module.exports = {
   },
   chainWebpack: (config) => {
     if (config.plugins.has("SystemJSPublicPathWebpackPlugin")) {
-      config.plugins.delete("SystemJSPublicPathWebpackPlugin");
+      config.plugins.delete("SystemJSPublicPathWebpackPlugin")
     }
   },
   filenameHashing: false,
-};
+  lintOnSave: false,
+}
